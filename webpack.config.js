@@ -6,9 +6,9 @@ const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackErrorReporting = require('bc-webpack-error-reporting-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const port = 3000
-const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://')
-const publicUrl = `${port}-${host}`
+// const port = 3000
+// const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://')
+// const publicUrl = `${port}-${host}`
 
 module.exports = {
   mode: 'development',
@@ -21,7 +21,7 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     historyApiFallback: true,
-    public: publicUrl
+    // public: publicUrl
   },
   module: {
     rules: [
@@ -54,9 +54,9 @@ module.exports = {
   },
   plugins: [
     new WebpackErrorReporting({
-      hookURL: process.env.BC_ERROR_HOOK,
-      username: process.env.BC_STUDENT_EMAIL,
-      token: process.env.BC_ASSETS_TOKEN,
+      // hookURL: process.env.BC_ERROR_HOOK,
+      // username: process.env.BC_STUDENT_EMAIL,
+      // token: process.env.BC_ASSETS_TOKEN,
       compiler: "webpack",
       language: "html,css,javascript",
       framework: "vanillajs"

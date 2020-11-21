@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3000",
-    "build": "webpack --mode development --verbose --colors --display-error-details",
-    "deploy": "node deploy-to-github.js"
+    "build": "webpack --mode development --verbose --colors --display-error-details"
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,8 @@
   },
   "homepage": "https://github.com/4GeeksAcademy/vanillajs-hello#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "animejs": "^3.2.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
