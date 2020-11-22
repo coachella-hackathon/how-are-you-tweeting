@@ -36,20 +36,17 @@ function changeText(data) {
   title2.innerHTML = data.title2;
   content.innerHTML = data.content;
 }
+
 window.onload = function() {
-  // const username = getUrlParameter("username");
+  const username = getUrlParameter("username");
   firebase.initializeApp(config.firebaseConfig);
-  const username = "WanderingQi";
+  // const username = "WanderingQi";
+  console.log(username);
   var clickCount = 0;
   var data = [{ title1: "Hello", title2: "@" + username, content: null }];
 
   var db = firebase.firestore();
   var docRef = db.collection("users").doc(username);
-
-  // TO remove in prod
-  // var getOptions = {
-  //   source: "cache"
-  // };
 
   docRef
     .get()
@@ -57,6 +54,7 @@ window.onload = function() {
       return doc.data();
     })
     .then(function(d) {
+      var profileImg = d.additionalInfo.profile_image_url;
       delete d["additionalInfo"];
       delete d["userCategory"];
       const arr = Object.values(d);
@@ -67,29 +65,56 @@ window.onload = function() {
         title2: tweetCount + " Times",
         content: null
       });
-
-      var tweetByMonthChartObj = _.countBy(arr, function(obj) {
-        console.log(obj);
-        return new Date(obj.created_at).toLocaleString("default", {
-          month: "short"
-        });
-      });
-      var tweetByMonthChartData = Object.keys(tweetByMonthChartObj).map(k => {
-        return { x: tweetByMonthChartObj[k], y: k };
-      });
-      console.log(tweetByMonthChartData);
-      var tweetByMonthChart = new Chart(
-        document.getElementById("tweetByMonthChart").getContext("2d"),
-        {
-          type: "line",
-          data: tweetByMonthChartData
-          // options: options
-        }
-      );
       data.push({
-        title1: "And You are So Active on Twitter",
-        title2: null,
-        content: tweetByMonthChart
+        title1: "In",
+        title2: "2020",
+        content: null
+      });
+      data.push({
+        title1: "It's not the",
+        title2: "Easiest Time",
+        content: null
+      });
+
+      data.push({
+        title1: "There are",
+        title2: "Happy Moments",
+        content: `<div class="card">
+        <img
+          src=${profileImg}
+        />
+        <div class="card-content">
+          <h3>${username}</h3>
+          <p>${arr[Math.floor(Math.random() * arr.length - 1)].tweet_text}</p>
+        </div>
+      </div>
+      `
+      });
+
+      data.push({
+        title1: "And",
+        title2: "Sad Ones",
+        content: `<div class="card">
+        <img
+          src=${profileImg}
+        />
+        <div class="card-content">
+          <h3>${username}</h3>
+          <p>${arr[Math.floor(Math.random() * arr.length - 1)].tweet_text}</p>
+        </div>
+      </div>
+      `
+      });
+
+      data.push({
+        title1: "But",
+        title2: "We Are Here For You",
+        content: null
+      });
+      data.push({
+        title1: "We have Prepared a",
+        title2: "Special 🎁 For You",
+        content: "Click anywhere to find out"
       });
 
       document.getElementById("content").innerHTML = "Click to Continue";
@@ -100,10 +125,11 @@ window.onload = function() {
     });
 
   document.getElementById("body").addEventListener("click", function() {
-    console.log(data);
     if (clickCount < data.length) {
       changeText(data[clickCount]);
       clickCount++;
+    } else {
+      window.location.href = "https://twitter.com/messages";
     }
   });
 };

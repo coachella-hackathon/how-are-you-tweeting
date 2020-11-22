@@ -2,6 +2,7 @@ body {
   background-color: #14171a;
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 section {
   display: flex;
@@ -15,26 +16,43 @@ h1 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .header-blue {
   color: #1da1f2;
   margin-bottom: 0.1em;
   --animate-delay: 0.5s;
 }
+.content {
+  margin: 8px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 18px;
+  display: flex;
+  min-width: 320px;
+  min-height: 120px;
+  align-items: center;
+  padding: 18px;
+}
+.card > img {
+  border-radius: 90px;
+}
+.card-content {
+  color: #14171a;
+  padding-left: 24px;
+  text-align: left;
+}
 .btn {
   background-color: #1da1f2;
   color: #fff;
   border-radius: 90px;
-  border: none;
   font-size: 1em;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 8px;
-}
-.btn:hover {
-  color: #1da1f2;
-  background-color: #fff;
+  cursor: pointer;
 }
 
 .circles {
