@@ -2,6 +2,8 @@
 
 #HowAreYouTweeting promotes self awareness and mental health conciousness for Twitter users during the pandemic and beyond. 
 
+![screenshot](./src/assets/img/Screen-Recording-2020-11-22-at-1.gif)
+
 ### Manual Installation
 
 1) Remember to install the npm packages first:
