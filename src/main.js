@@ -85,7 +85,7 @@ window.onload = function() {
         />
         <div class="card-content">
           <h3>${username}</h3>
-          <p>${arr[Math.floor(Math.random() * arr.length - 1)].tweet_text}</p>
+          <p>${arr[5].tweet_text}</p>
         </div>
       </div>
       `
@@ -100,7 +100,7 @@ window.onload = function() {
         />
         <div class="card-content">
           <h3>${username}</h3>
-          <p>${arr[Math.floor(Math.random() * arr.length - 1)].tweet_text}</p>
+          <p>${arr[1].tweet_text}</p>
         </div>
       </div>
       `

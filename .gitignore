@@ -1,7 +1,6 @@
 #ignore the git local files and the c9 project files
 .git
 .c9
-config.js
 
 # ignore the repositories where webpack puts the bundles
 dist/
