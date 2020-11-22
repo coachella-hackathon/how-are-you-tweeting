@@ -54,7 +54,9 @@ window.onload = function() {
       return doc.data();
     })
     .then(function(d) {
-      var profileImg = d.additionalInfo.profile_image_url;
+      const profileImg = d.additionalInfo.profile_image_url;
+      const happiestTweet = d["happiest-tweet"];
+      const saddestTweet = d["saddest-tweet"];
       delete d["additionalInfo"];
       delete d["userCategory"];
       const arr = Object.values(d);
@@ -85,7 +87,7 @@ window.onload = function() {
         />
         <div class="card-content">
           <h3>${username}</h3>
-          <p>${arr[5].tweet_text}</p>
+          <p>${happiestTweet}</p>
         </div>
       </div>
       `
@@ -100,7 +102,7 @@ window.onload = function() {
         />
         <div class="card-content">
           <h3>${username}</h3>
-          <p>${arr[1].tweet_text}</p>
+          <p>${saddestTweet}</p>
         </div>
       </div>
       `
