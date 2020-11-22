@@ -52,7 +52,7 @@ h1 {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(29, 161, 242, 0.2);
+  background: linear-gradient(#1da1f200, #1da0f296);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }

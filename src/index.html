@@ -9,8 +9,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"
+      type="text/javascript"
+    ></script>
   </head>
-  <body>
+  <body id="body">
     <section id="section">
       <h1 class="animate__animated animate__fadeIn" id="title-1">
         How Are You
@@ -19,7 +23,8 @@
         Tweeting
       </h1>
       <div id="content">
-        <p>Relive Your Biggest Moments in 2020</p>
+        Loading...
+        <canvas id="tweetByMonthChart" width="400" height="400"></canvas>
       </div>
     </section>
 
