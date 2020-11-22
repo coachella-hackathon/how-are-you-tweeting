@@ -4,7 +4,7 @@
   "description": "Professional Boilerplate for Vanilla.js Web Apps",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --mode development --port 3000",
+    "start": "webpack-dev-server --mode production --port 3000",
     "build": "webpack --mode production --verbose --colors --display-error-details"
   },
   "repository": {
